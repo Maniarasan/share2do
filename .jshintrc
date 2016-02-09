@@ -17,8 +17,8 @@
   "strict": true,
   "jquery": true,
   "globals": {
-    "Shar2Do": true,
-    "shar-2-do": true,
+    "Project2": true,
+    "project-2": true,
     "_": false,
     "Backbone": false,
     "JST": false,

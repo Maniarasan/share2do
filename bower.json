@@ -1,5 +1,5 @@
 {
-  "name": "shar-2-do",
+  "name": "project-2",
   "version": "0.0.0",
   "dependencies": {
     "bootstrap-sass-official": "~3.3.1",
@@ -7,5 +7,8 @@
     "backbone": "~1.1.0",
     "lodash": "~2.4.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
 }
