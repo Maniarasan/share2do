@@ -18,7 +18,11 @@
   </head>
 
   <body>
+    <script id="expressions-template" type="text/x-handlebars-template">
 
+      {{#list people}}{{firstName}} {{lastName}}{{/list}}
+
+    </script>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -41,9 +45,17 @@
     <div class="container">
 
       <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        <h1>Bootstrap - start1 - starter template</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document. ghjhjhsdjfkghkdfs</p>
+
+        <button type="button" class="btn btn-default btn-circle btn-lg"><i class="glyphicon glyphicon-plus"></i></button>
+
+
+        <div class="content-placeholder">
+
+        </div>
       </div>
+
 
     </div><!-- /.container -->
 
@@ -54,5 +66,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="/scripts/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascripts/scripts.js"></script>
+    <script type="text/javascript" src="/javascripts/handlebars.js"></script>
+
   </body>
 </html>
