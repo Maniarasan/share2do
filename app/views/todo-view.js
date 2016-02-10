@@ -13,7 +13,6 @@ var app = app || {};
 		initialize: function () {
 			this.$input = this.$('.title-input');
 			this.$titleDisplay = this.$('.title-display');
-			this.$list = $('.todo-list');
 
 			this.listenTo(this.model, 'change', this.render);
 		},

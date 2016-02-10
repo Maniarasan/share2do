@@ -50,7 +50,7 @@
             </section>
           
           </header>
-          <button type="button" class="btn btn-default btn-circle btn-lg"><i class="glyphicon glyphicon-plus"></i></button>
+          <button type="button" class="btn btn-default btn-circle btn-lg" id="add_task"><i class="glyphicon glyphicon-plus"></i></button>
           <section class="tasks">
             <ul class="todo-list"></ul>
             <div class='content-placeholder'></div>
@@ -88,8 +88,11 @@
     <script src="/node_modules/backbone/backbone.js"></script>
     <script src="/node_modules/backbone.localstorage/backbone.localStorage.js"></script>
     <script src="/app/models/todo.js"></script>
+    <script src="/app/models/task.js"></script>
     <script src="/app/collections/todos.js"></script>
+    <script src="/app/collections/tasks.js"></script>
     <script src="/app/views/todo-view.js"></script>
+    <script src="/app/views/task-view.js"></script>
     <script src="/app/views/app-view.js"></script>
     <script src="/app/app.js"></script>
   </body>

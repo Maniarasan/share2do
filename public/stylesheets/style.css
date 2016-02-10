@@ -22,3 +22,17 @@ body {
   line-height: 1.33;
   border-radius: 25px;
 }
+
+.todo-list .editing .view, 
+.todo-list .edit {
+  display: none;
+}
+
+.todo-list .view, 
+.todo-list .editing .edit {
+  display: block;
+}
+
+.todo-list .completed label {
+  text-decoration: line-through;
+}
