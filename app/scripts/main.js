@@ -1,7 +1,7 @@
-/*global project-2, $*/
+/*global shar-2-do, $*/
 
 
-window.project-2 = {
+window.shar-2-do = {
   Models: {},
   Collections: {},
   Views: {},
@@ -14,5 +14,5 @@ window.project-2 = {
 
 $(document).ready(function () {
   'use strict';
-  project-2.init();
+  shar-2-do.init();
 });

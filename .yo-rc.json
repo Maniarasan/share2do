@@ -1,7 +1,7 @@
 {
   "generator-backbone": {
     "appPath": "app",
-    "appName": "Project2",
+    "appName": "Shar2Do",
     "testFramework": "mocha",
     "templateFramework": "lodash",
     "sassBootstrap": true,
