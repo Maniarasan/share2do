@@ -56,9 +56,9 @@ $(document).ready(function () {
     b.val(c.text());
   });
 
-  $('.btn-circle').on('click', function (e){
-    useHandleBars(items, true);
-  });
+  // $('.btn-circle').on('click', function (e){
+  //   useHandleBars(items, true);
+  // });
 
   $('.form-control').focusout(function(e) {
     var $parentElement = $(e.currentTarget).parent();
