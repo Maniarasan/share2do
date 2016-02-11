@@ -57,7 +57,19 @@ body {
 .todo-list .editing .edit {
   display: block;
 }
+.todo-title {
+  font-size: x-large;
+}
 
 .todo-list .completed .task-title {
   text-decoration: line-through;
+}
+
+.btn-circle {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.todo-list {
+  padding-left: 0px;
 }
