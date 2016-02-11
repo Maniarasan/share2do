@@ -1,18 +1,16 @@
 'use strict';
 
 var Task = require('../models/task');
-var data = {
-  title: 'Finish M1 module',
-  description: 'Important',
-  status: 'Half Done',
-  objectId: '56bb251e9243f208117a5ecb'
-};
 
 var post = function (req, res) {
-  var task = new Task(data);
-  task.save(data, function (err) {
+  console.log(req);
+  var data = req.body;
+  var todoId = req.params.id;
+  data.todoId = todoId;
+
+  task.save(data, function (err, savedData) {
     if (err) { console.log(err); }
-    res.json('your data is saved');
+    res.json(savedData);
   });
 };
 
