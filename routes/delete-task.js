@@ -3,9 +3,13 @@
 var Task = require('../models/task');
 
 var deleteList = function (req, res) {
-  Task.remove({_id: '56bc0b88d33878180b159427'}, function (err) {
+	var todoId = req.params.id;
+	var taskId = req.params.taskid;
+
+  Task.remove( {_id: taskId}, function (err,num) {
     if (!err) {
-      console.log('deleted');
+      console.log('deleted'+num);
+      res.json(num);
     } else {
       console.log(err);
     }

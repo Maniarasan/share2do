@@ -8,7 +8,8 @@ var post = function (req, res) {
   var todoId = req.params.id;
   data.todoId = todoId;
 
-  task.save(data, function (err, savedData) {
+var task = new Task(data);
+  task.save(function (err, savedData) {
     if (err) { console.log(err); }
     res.json(savedData);
   });

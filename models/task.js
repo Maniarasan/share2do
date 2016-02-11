@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var TaskSchema = new Schema({
   title: String,
   description: String,
-  status: String,
+  completed: Boolean,
   todoId: Schema.ObjectId
 });
 

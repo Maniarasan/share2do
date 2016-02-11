@@ -3,7 +3,7 @@
 var Todo = require('../models/todo');
 var data = {
   title: 'Our first to',
-  created_by: 'Manny3',
+  created_by: 'Arasu',
   description: 'The best todo ever',
 };
 
