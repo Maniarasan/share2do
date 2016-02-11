@@ -30,7 +30,7 @@ function addListItems(items, addNew){
   var itemString='';
   itemString = itemString + addNewItem(addNew);
   for(var i=0, l=items.length; i<l; i++) {
-    itemString = itemString + '<li class="list-group-item">'+'<input type="text" class="form-control hide-element" ><div>'+items[i].firstName+' '+items[i].lastName+'</div></li>';
+    itemString = itemString + '<li class="list-group-item"><input type="text" class="form-control hide-element" ><div class="display-container"><input type="checkbox" class="checkbox check-todo" checked="checked"/><div class="todo-text">'+items[i].firstName+' '+items[i].lastName+'</div><a href="#" ><span class="glyphicon glyphicon-trash delete-todo"></span></a></div></li>';
   }
   return itemString;
 }
