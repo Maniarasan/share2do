@@ -5,7 +5,7 @@ var app = app || {};
 	app.TaskView = Backbone.View.extend({
 		tagName:  'li',
 		className: 'list-group-item',
-		template: _.template($('#task_template').html()),
+		template: Handlebars.compile($('#task_template').html()),
 		events: {
 			'click .toggle': 'toggleCompleted',
 			'dblclick .task-title': 'edit',
