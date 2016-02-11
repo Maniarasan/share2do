@@ -4,7 +4,7 @@ var app = app || {};
 	'use strict';
 	var Todos = Backbone.Collection.extend({
 		model: app.Todo,
-		localStorage: new Backbone.LocalStorage('todos-backbone-demo'),
+		url: '/todos',
 	});
 	app.todos = new Todos();
 })();

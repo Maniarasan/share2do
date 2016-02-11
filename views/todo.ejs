@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Share2Do</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/scripts/css/bootstrap.min.css" rel="stylesheet">
@@ -63,26 +63,22 @@
 
 
     <script type="text/template" id="task_template">
-      <input type="text" class="edit form-control" value="<%- title %>">
+      <input type="text" class="edit form-control" value="{{title}}">
       <div class="view display-container">
-        <input type="checkbox" class="toggle checkbox check-todo" <%= completed ? 'checked' : '' %>/>
-        <div class="task-title"><%- title %></div>
+        <input type="checkbox" class="toggle checkbox check-todo" {{#if completed}}checked{{/if}}/>
+        <div class="task-title">{{title}}</div>
         <a href="#" ><span class="destroy glyphicon glyphicon-trash delete-todo"></span></a>
       </div>
-
-    </script>
-    <script id="expressions-template" type="text/x-handlebars-template">
-
-      {{#list people}}{{firstName}} {{lastName}}{{/list}}
 
     </script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script>
+      window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>');     
+    </script>
     <script src="/scripts/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/javascripts/scripts.js"></script>
     <script type="text/javascript" src="/javascripts/handlebars.js"></script>
 
     <script src="/node_modules/underscore/underscore.js"></script>
@@ -96,5 +92,9 @@
     <script src="/app/views/task-view.js"></script>
     <script src="/app/views/app-view.js"></script>
     <script src="/app/app.js"></script>
+    <script type="text/javascript">
+      var todo = <%- JSON.stringify(todo) %>;
+      todo = new app.Todo(todo);
+    </script>
   </body>
 </html>
