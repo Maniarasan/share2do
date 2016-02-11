@@ -8,10 +8,11 @@ var app = app || {};
 		template: Handlebars.compile($('#task_template').html()),
 		events: {
 			'click .toggle': 'toggleCompleted',
-			'dblclick .task-title': 'edit',
+			'click .task-title': 'edit',
 			'click .destroy': 'clear',
 			'keypress .edit': 'updateOnEnter',
-			'keydown .edit': 'revertOnEscape'
+			'keydown .edit': 'revertOnEscape',
+			'blur .edit': 'saveOnBlur'
 		},
 		initialize: function () {
 			this.listenTo(this.model, 'change', this.render);
@@ -37,17 +38,25 @@ var app = app || {};
 		close: function () {
 			var value = this.$input.val();
 			var trimmedValue = value.trim();
+			
 			if (!this.$el.hasClass('editing')) {
 				return;
 			}
-
+			this.$el.addClass('savingggg');
 			if (trimmedValue) {
 				this.model.save({ title: trimmedValue });
 			} else {
 				this.clear();
 			}
-
+			
 			this.$el.removeClass('editing');
+			this.$el.removeClass('savingggg');
+			
+		},
+		saveOnBlur: function(e) {
+			if(!this.$el.hasClass('savingggg')) {
+				this.close();
+			}
 		},
 		updateOnEnter: function (e) {
 			if (e.which === ENTER_KEY) {

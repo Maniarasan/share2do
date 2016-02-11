@@ -18,8 +18,8 @@ var app = app || {};
 		fetchToDoList: function() {
 			if (todo == undefined) {
 				todo = new app.Todo();
-				app.todos.push(todo);
 			}
+			app.todos.push(todo);
 			(new app.TodoView({model: todo})).render();
 			app.tasks.fetch({
 				success: $.proxy(this.addAllTasks, this)
