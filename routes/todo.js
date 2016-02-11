@@ -27,4 +27,10 @@ router.get('/todos/:id/tasks', retrieve_task);
 var post_task = require('./post-task');
 router.post('/todos/:id/tasks', post_task);
 
+var updateTask = require('./update-task');
+router.put('/todos/:id/tasks/:taskid', updateTask);
+
+var deleteTask = require('./delete-task');
+router.delete('/todos/:id/tasks/:taskid', deleteTask);
+
 module.exports = router;
