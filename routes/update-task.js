@@ -5,6 +5,8 @@ var data = {
   objectId: '56bb251e9243f208117a5ecb'
 };
 
+
+
 // var updatetask = function (req, res) {
 //   Task.find(data, function (err, result) {
 //     if (err) { console.log(result); }
@@ -19,13 +21,14 @@ var data = {
 //   });
 // };
 
-var updatetask = function (req, res) {
-    Task.update({_id: '56bc11b0d30e870c04057aa2'}, { $set : { title : 'hello'}}, function (err) {
+/*var updatetask = function (req, res) {
+    Task.update({_id: '56bc11b0d30e870c04057aa2'}, function (err) {
         if (!err) {
             res.json("updated");
         }
     });
 };
-
-module.exports = updatetask;
+// */
+// var updatetask;
+// module.exports = updatetask;
 
