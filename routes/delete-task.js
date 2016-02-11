@@ -8,7 +8,6 @@ var deleteList = function (req, res) {
 
   Task.remove( {_id: taskId}, function (err,num) {
     if (!err) {
-      console.log('deleted'+num);
       res.json(num);
     } else {
       console.log(err);
