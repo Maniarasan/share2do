@@ -16,8 +16,6 @@ var app = app || {};
 			return this;
 		},
 		fetchToDoList: function() {
-			// app.todos.fetch();
-			// var todo = _.first(app.todos.models);
 			if (todo == undefined) {
 				todo = new app.Todo();
 				app.todos.push(todo);

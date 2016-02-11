@@ -5,9 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var todo = require('./routes/todo');
-var users = require('./routes/users');
-
 var app = express();
 var mongoose = require('mongoose');
 
@@ -27,8 +24,28 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname + '/views'));
 
-app.use('/', todo);
-app.use('/users', users);
+//Routes
+var createNewTodo = require('./routes/post_todo');
+app.get('/', createNewTodo);
+
+var retrieveTodoHtmlPage = require('./routes/retrieve_todo');
+app.get('/todos/:id', retrieveTodoHtmlPage);
+
+var updateTodo = require('./routes/update_todo');
+app.put('/todos/:id', updateTodo);
+
+var retrieveTasks = require('./routes/retrieve_tasks');
+app.get('/todos/:id/tasks', retrieveTasks);
+
+var postTask = require('./routes/post_task');
+app.post('/todos/:id/tasks', postTask);
+
+var updateTask = require('./routes/update_task');
+app.put('/todos/:id/tasks/:taskid', updateTask);
+
+var deleteTask = require('./routes/delete_task');
+app.delete('/todos/:id/tasks/:taskid', deleteTask);
+
 app.use('/scripts', express.static(__dirname + '/node_modules/bootstrap/dist/'));
 app.use('/node_modules', express.static(__dirname + '/node_modules/'));
 app.use('/app', express.static(__dirname + '/app/'));
