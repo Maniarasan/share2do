@@ -18,11 +18,6 @@
   </head>
 
   <body>
-    <script id="expressions-template" type="text/x-handlebars-template">
-
-      {{#list people}}{{firstName}} {{lastName}}{{/list}}
-
-    </script>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -45,21 +40,41 @@
     <div class="container">
 
       <div class="starter-template">
-        <h1>Bootstrap - start1 - starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document. ghjhjhsdjfkghkdfs</p>
-
-        <button type="button" class="btn btn-default btn-circle btn-lg"><i class="glyphicon glyphicon-plus"></i></button>
-
-
-        <div class="content-placeholder">
-
-        </div>
+        <section class="todoapp">
+          <header class="header">
+            <h1>todos</h1>
+            
+            <section class="todo-title">
+              <div class="title-display"></div>
+              <input class="title-input" placeholder="Please enter To Do title" autofocus>
+            </section>
+          
+          </header>
+          <button type="button" class="btn btn-default btn-circle btn-lg" id="add_task"><i class="glyphicon glyphicon-plus"></i></button>
+          <section class="tasks">
+            <ul class="todo-list"></ul>
+            <div class='content-placeholder'></div>
+          </section>
+        </section>
       </div>
 
 
     </div><!-- /.container -->
 
 
+    <script type="text/template" id="task_template">
+      <div class="view">
+        <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+        <label><%- title %></label>
+        <button class="destroy"></button>
+      </div>
+      <input class="edit" value="<%- title %>">
+    </script>
+    <script id="expressions-template" type="text/x-handlebars-template">
+
+      {{#list people}}{{firstName}} {{lastName}}{{/list}}
+
+    </script>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -69,5 +84,16 @@
     <script type="text/javascript" src="/javascripts/scripts.js"></script>
     <script type="text/javascript" src="/javascripts/handlebars.js"></script>
 
+    <script src="/node_modules/underscore/underscore.js"></script>
+    <script src="/node_modules/backbone/backbone.js"></script>
+    <script src="/node_modules/backbone.localstorage/backbone.localStorage.js"></script>
+    <script src="/app/models/todo.js"></script>
+    <script src="/app/models/task.js"></script>
+    <script src="/app/collections/todos.js"></script>
+    <script src="/app/collections/tasks.js"></script>
+    <script src="/app/views/todo-view.js"></script>
+    <script src="/app/views/task-view.js"></script>
+    <script src="/app/views/app-view.js"></script>
+    <script src="/app/app.js"></script>
   </body>
 </html>
