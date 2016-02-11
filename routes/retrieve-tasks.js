@@ -1,15 +1,15 @@
 'use strict';
 
 var Task = require('../models/task');
-var data = {
-  objectId: '56bb251e9243f208117a5ecb'
-};
 
 var taskList = function (req, res) {
-  Task.find(data, function (err, result) {
-    if (err) { console.log(result); }
-    res.json('your data ' + result);
-  });
+	console.log(req);
+	var todoId = req.params.id;
+	  Task.find({todoId:todoId}, function (err, result) {
+	    if (err) { }
+	    
+	    res.json(result);
+	  });
 };
 
 module.exports = taskList;
