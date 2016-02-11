@@ -58,6 +58,6 @@ body {
   display: block;
 }
 
-.todo-list .completed label {
+.todo-list .completed .task-title {
   text-decoration: line-through;
 }

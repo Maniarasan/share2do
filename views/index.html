@@ -63,12 +63,13 @@
 
 
     <script type="text/template" id="task_template">
-      <div class="view">
-        <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
-        <label><%- title %></label>
-        <button class="destroy"></button>
+      <input type="text" class="edit form-control" value="<%- title %>">
+      <div class="view display-container">
+        <input type="checkbox" class="toggle checkbox check-todo" <%= completed ? 'checked' : '' %>/>
+        <div class="task-title"><%- title %></div>
+        <a href="#" ><span class="destroy glyphicon glyphicon-trash delete-todo"></span></a>
       </div>
-      <input class="edit" value="<%- title %>">
+
     </script>
     <script id="expressions-template" type="text/x-handlebars-template">
 

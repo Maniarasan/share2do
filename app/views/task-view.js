@@ -4,10 +4,11 @@ var app = app || {};
 	'use strict';
 	app.TaskView = Backbone.View.extend({
 		tagName:  'li',
+		className: 'list-group-item',
 		template: _.template($('#task_template').html()),
 		events: {
 			'click .toggle': 'toggleCompleted',
-			'dblclick label': 'edit',
+			'dblclick .task-title': 'edit',
 			'click .destroy': 'clear',
 			'keypress .edit': 'updateOnEnter',
 			'keydown .edit': 'revertOnEscape',
@@ -37,7 +38,6 @@ var app = app || {};
 		close: function () {
 			var value = this.$input.val();
 			var trimmedValue = value.trim();
-			console.log("coming here");
 			if (!this.$el.hasClass('editing')) {
 				return;
 			}
