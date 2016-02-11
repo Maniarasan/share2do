@@ -23,8 +23,9 @@ var app = app || {};
 				app.todos.push(todo);
 			}
 			(new app.TodoView({model: todo})).render();
-			app.tasks.fetch();
-			this.addAllTasks();
+			app.tasks.fetch({
+				success: $.proxy(this.addAllTasks, this)
+			});
 		},
 		addNewTask: function() {
 			var task = new app.Task();

@@ -22,5 +22,9 @@ router.get('/todos/:id', function(req, res, next) {
 
 var updateTodo = require('./update_todo');
 router.put('/todos/:id', updateTodo);
+var retrieve_task = require('./retrieve-tasks');
+router.get('/todos/:id/tasks', retrieve_task);
+var post_task = require('./post-task');
+router.post('/todos/:id/tasks', post_task);
 
 module.exports = router;

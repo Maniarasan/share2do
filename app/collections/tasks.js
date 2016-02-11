@@ -4,7 +4,7 @@ var app = app || {};
 	'use strict';
 	var Tasks = Backbone.Collection.extend({
 		model: app.Task,
-		localStorage: new Backbone.LocalStorage('tasks-backbone'),
+		url: "/todos/" + todo.id + "/tasks",
 		completed: function () {
 			return this.where({completed: true});
 		}

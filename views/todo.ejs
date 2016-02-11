@@ -85,6 +85,10 @@
     <script src="/node_modules/backbone/backbone.js"></script>
     <script src="/node_modules/backbone.localstorage/backbone.localStorage.js"></script>
     <script src="/app/models/todo.js"></script>
+    <script type="text/javascript">
+      var todo = <%- JSON.stringify(todo) %>;
+      todo = new app.Todo(todo);
+    </script>
     <script src="/app/models/task.js"></script>
     <script src="/app/collections/todos.js"></script>
     <script src="/app/collections/tasks.js"></script>
@@ -92,9 +96,5 @@
     <script src="/app/views/task-view.js"></script>
     <script src="/app/views/app-view.js"></script>
     <script src="/app/app.js"></script>
-    <script type="text/javascript">
-      var todo = <%- JSON.stringify(todo) %>;
-      todo = new app.Todo(todo);
-    </script>
   </body>
 </html>

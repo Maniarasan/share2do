@@ -11,8 +11,7 @@ var app = app || {};
 			'dblclick .task-title': 'edit',
 			'click .destroy': 'clear',
 			'keypress .edit': 'updateOnEnter',
-			'keydown .edit': 'revertOnEscape',
-			'blur .edit': 'close'
+			'keydown .edit': 'revertOnEscape'
 		},
 		initialize: function () {
 			this.listenTo(this.model, 'change', this.render);
